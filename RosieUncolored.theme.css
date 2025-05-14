@@ -1,0 +1,155 @@
+@import url("https://nspc911.github.io/themes/vencord/RefreshedSeamlessChatBar.theme.css");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://xcruxiex.github.io/themes/core/badges.css");
+@import url("https://xcruxiex.github.io/themes/core/settings-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@100;300;400;500;700&display=swap');
+
+
+:root {
+    --font-primary: Quicksand;
+    --font-display: var(--font-primary);
+}
+
+:root {
+
+    --rscb-chat-box-padding: 8px; 
+    --rscb-no-jump-chat: 0;
+     --rscb-clip-chat-through-typing-bar: 0;
+}
+
+.theme-darker {
+    --background-secondary-alt: color-mix(in oklab,var(--neutral-82) 100%, var(--theme-base-color,#000) var(--theme-base-color-amount, 0%));
+    --bg-surface-overlay: color-mix(in oklab, var(--primary-800) 100%, var(--theme-base-color, #000) var(--theme-base-color-amount, 0%));
+}
+
+.theme-midnight {
+    --background-secondary-alt: color-mix(in oklab, var(--neutral-95) 100%, var(--theme-base-color, #000) var(--theme-base-color-amount, 0%));
+    --bg-surface-overlay: color-mix(in oklab, var(--primary-800) 100%, var(--theme-base-color, #000) var(--theme-base-color-amount, 0%));
+}
+
+#vc-spotify-player {
+    --blur-amount: 4px; 
+    --normal-bg-colour: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt)));
+
+    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, var(--normal-bg-colour) 100%) !important;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+    > * {
+      filter: drop-shadow(0 0 10px var(--normal-bg-colour));
+    }
+}
+#vc-spotify-player:hover {
+    --blur-amount: 0px;
+}
+#vc-spotify-player::before,
+#vc-spotify-player::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease-out;
+}
+#vc-spotify-player::before {
+    background: var(--vc-spotify-track-image);
+    background-position: center top; 
+    background-size: cover; 
+    opacity: 0.5;
+}
+#vc-spotify-player:hover::before {
+    opacity: 0.7;
+}
+#vc-spotify-player::after {
+    backdrop-filter: blur(var(--blur-amount));
+}
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"] {
+    background-color: white !important;
+    background: var(--vc-spotify-track-image);
+    background-size: 1px 100%;
+}
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"]::before {
+    content: "";
+    position: fixed;
+    height: inherit;
+    width: inherit;
+    top: inherit;
+    left: inherit;
+    border-radius: 4px 0 0 4px;
+    backdrop-filter: blur(10px) saturate(4) brightness(1.6);
+}
+
+
+.scroller_c1e9c4{
+    margin: -4px;
+    &::after,.separator_c1e9c4 {
+        margin: 1px 8px !important;
+    }
+    &::after,.wrapper_f563df {
+        padding: 2px !important;
+    }
+}
+
+.typingDots_b88801 > .ellipsis_b88801+.text_b88801 {
+  font-size: 0;
+  height: 16px;
+  >strong {
+    font-size: 12px;
+    &::after {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    &:last-child::after {
+      content: " is yapping...";
+    }
+    &:last-child:not(:first-child)::after {
+      content: " are yapping...";
+    }
+    &:nth-last-child(2)::after {
+      content: " and "
+    }
+    &:nth-last-child(3)::after {
+      content: ", ";
+    }
+  }
+  &:not(:has(>strong))::after {
+    font-size: 12px;
+    content: "Several people are yapping...";
+  }
+}
+
+.title_c38106 {
+  display: none;
+}
+
+.title_f75fb0 {
+  padding: 0px !important;
+  padding-left: 12px !important;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: transparent !important;
+  height: var(--custom-app-top-bar-height) !important;
+  min-height: 0px;
+  border: none !important;
+  width: calc(100vw);
+}
+
+.followButton_f75fb0,
+.topicClickTarget__6ec1a {
+  -webkit-app-region: no-drag !important;
+}
+
+.base_c48ade:has(.bar_c38106[data-windows="true"]) .title_f75fb0 {
+  width: calc(100vw - 240px)!important;
+}
+
+.children__9293f::after {
+  background: linear-gradient(to right, transparent 0, var(--bg-base-tertiary) 100%)!important;
+}
+.topic__6ec1a {
+  flex: none;
+}
