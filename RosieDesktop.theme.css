@@ -268,6 +268,10 @@ div[class^="actionButtons"] [class^="button"] [class*="buttonColor_"] {
     background-color: var(--base02);
 }
 
+.spineBorder__5b40b { 
+    background: var(--base05); 
+}
+
 /* --- Checkbox Recolor (OFF) --- */
 .container__87bf1 {
     background-color: var(--base03) !important;
@@ -446,7 +450,7 @@ svg.guildBoostBadge__5dba5 path {
         background: var(--base02) !important;
     }
     .chatContent_f75fb0 {
-        background-color: var(--base00) !important;
+        background-image: url(https://raw.githubusercontent.com/ctbug/RosieDesktop/refs/heads/main/rosiedark.jpg);
     }
     .members_c8ffbb,
     .member_c8ffbb {
